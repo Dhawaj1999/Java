@@ -14,7 +14,7 @@ public class M__Rotate_Array {
             arr[i] = sc.nextInt();
         }
 
-        System.out.print("enter element x : ");
+        System.out.print("At how many position you want to shift elements ?  ");
         int x = sc.nextInt();
 
         // this loop is repeating rotation till user ask
