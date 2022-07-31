@@ -9,7 +9,7 @@ public class M__Rotate_Array {
         int[] arr = new int[size];
 
         System.out.print("enter elements of array : ");
-
+        // taking array input
         for (int i = 0; i < size; i++){
             arr[i] = sc.nextInt();
         }
@@ -29,6 +29,7 @@ public class M__Rotate_Array {
             arr[arr.length-1] = first;
         }
 
+        // printing output here
         for (int i : arr){
             System.out.print(i + " ");
         }
