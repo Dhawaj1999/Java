@@ -17,7 +17,7 @@ public class M__Rotate_Array {
         System.out.print("enter element x : ");
         int x = sc.nextInt();
 
-        // this loop is repeat rotation till user ask
+        // this loop is repeating rotation till user ask
         for (int i = 0; i < x; i++){
             int first = arr[0];
 
