@@ -9,23 +9,24 @@ public class E__Reverse_String {
         String str = scan.nextLine();
 
         int i = str.length()-1;
-        int j,k;
+        int j = str.length()-1;
 
         while (i >= 0){
-            j = i;
-            while (str.charAt(j) != ' ' && j > 0)
-                j--;
-            if (j == 0)
-                k = 0;
-            else
-                k = j+1;
-            while (k <= i){
-                System.out.print(str.charAt(k));
-                k++;
+            if (str.charAt(i) == ' '){
+                int k = i+1;
+                while (k <= j){
+                    System.out.print(str.charAt(k));
+                    k++;
+                }
+                System.out.print(" ");
+                j = i-1;
             }
-            System.out.print(" ");
-            i = j-1;
+            i--;
         }
-
+        int k = i+1;
+        while (k <= j){
+            System.out.print(str.charAt(k));
+            k++;
+        }
     }
 }
