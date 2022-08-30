@@ -19,10 +19,13 @@ public class D__Insertion_Sort {
             int j = i-1;
             while (j >= 0 && array[j] > temp){
                  array[j+1] = array[j];
+                 array[j] = temp;
                  j--;
             }
-            array[j+1] = temp;
         }
 
+        for (int val : array){
+            System.out.print(val + " ");
+        }
     }
 }
