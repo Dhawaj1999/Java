@@ -26,15 +26,13 @@ public class A__Binary_Search {
             int mid = (start + end)/2;
             if (element == array[mid]){
                 System.out.print("found at index : " + mid);
-                break;
+                return;
             } else if (element > array[mid]){
                 start = mid + 1;
             } else {
                 end = mid - 1;
             }
         }
-        if (start > end){
             System.out.print("not found");
-        }
     }
 }
