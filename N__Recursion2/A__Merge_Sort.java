@@ -1,16 +1,6 @@
 package N__Recursion2;
 
 public class A__Merge_Sort {
-    public static void divide(int[] arr, int si, int ei){
-        if (si >= ei){
-            return;
-        }
-
-        int mid = (si + ei)/2;
-        divide(arr, si, mid);
-        divide(arr, mid+1, ei);
-        conquer(arr, si, mid, ei);
-    }
 
     public static void conquer(int[] arr, int si, int mid, int ei){
         int[] merged = new int[ei-si+1];
@@ -45,6 +35,16 @@ public class A__Merge_Sort {
         for (int index = 0; index < merged.length; index++){
             arr[si+index] = merged[index];
         }
+    }
+    public static void divide(int[] arr, int si, int ei){
+        if (si >= ei){
+            return;
+        }
+
+        int mid = (si + ei)/2;
+        divide(arr, si, mid);
+        divide(arr, mid+1, ei);
+        conquer(arr, si, mid, ei);
     }
 
     public static void main(String[] args) {
