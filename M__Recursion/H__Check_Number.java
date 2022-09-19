@@ -1,25 +1,24 @@
 package M__Recursion;
 
 public class H__Check_Number {
-    public static boolean checkNum(int[] a, int num){
-        if (a.length <= 0){
-            return false;
+    public static int sortedArray(int[] array, int startIndex, int x){
+        if(startIndex == array.length){
+            return -1;
         }
 
-        if (num == a[0]){
-            return true;
+        if (array[startIndex] == x){
+            return startIndex;
         }
 
-        int[] b = new int[a.length-1];
-        for (int i = 1; i < a.length; i++){
-            b[i-1] = a[i];
-        }
-
-        boolean temp = checkNum(b, num);
-        return temp;
+        return sortedArray(array, startIndex+1, x);
     }
+
+    public static int takeInput(int[] array){
+        return sortedArray(array, 0, 3);
+    }
+
     public static void main(String[] args) {
-        int[] a = {1,2,3,4,5};
-        System.out.println(checkNum(a, 5));
+        int[] array = {1,2,3,8,4};
+        System.out.println(takeInput(array));
     }
 }
