@@ -16,7 +16,7 @@ public class A__Sum_Of_Natural_Numbers {
     // second way
     public static int sumTwo(int n){
         if (n == 1){
-            return 1;
+            return n;
         }
         int temp = sumTwo(n-1);
         return temp + n;
