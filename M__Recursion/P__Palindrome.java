@@ -2,7 +2,7 @@ package M__Recursion;
 
 public class P__Palindrome {
     public static boolean palindrome(String s, int i, int j){
-        if (s.charAt(i) == s.charAt(j)){
+        if (i == j){
             return true;
         }
 
@@ -19,7 +19,7 @@ public class P__Palindrome {
 
     public static void main(String[] args) {
         String s = "racecar";
-        boolean str = input(s);
-        System.out.println(str);
+        System.out.println(input(s));
+
     }
 }
