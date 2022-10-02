@@ -1,19 +1,20 @@
 package M__Recursion;
 
 public class R__Replace_pi {
-    public static String pi(String s) {
-        if (s.length() < 2) {
-            return s;
+    public static void pi(String s, int i, String str) {
+        if (i == s.length()){
+            System.out.println(str);
+            return;
         }
-        String firstTwo = s.substring(0, 2);
-        if (firstTwo.equals("pi")) {
-            return "3.14" + pi(s.substring(2));
-        } else {
-            return s.charAt(0) + pi(s.substring(1));
+        if (s.charAt(i) == 'p' && s.charAt(i+1) == 'i'){
+            pi(s, i+2, str+"3.14");
+        }
+        else {
+            pi(s, i+1, str+s.charAt(i));
         }
     }
 
     public static void main(String[] args) {
-        System.out.println(pi("xpix"));
+        pi("xpixx", 0, "");
     }
 }

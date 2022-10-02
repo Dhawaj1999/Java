@@ -1,18 +1,20 @@
 package M__Recursion;
 
 public class S__Remove_x {
-    public static String removal(String s){
-        if (s.length() < 1){
-            return s;
+    public static void removal(String s, int i, String str){
+        if (i == s.length()){
+            System.out.println(str);
+            return;
         }
-        String check = s.substring(0,1);
-        if (check.equals("x")){
-            return removal(s.substring(1));
-        } else {
-            return s.charAt(0) + removal(s.substring(1));
+        if (s.charAt(i) == 'x'){
+            removal(s, i+1, str);
+        }
+        else {
+            removal(s, i+1, str+s.charAt(i));
         }
     }
     public static void main(String[] args) {
-        System.out.println(removal("abdxbdxcc"));
+
+        removal("abdxbdxcc", 0, "");
     }
 }
