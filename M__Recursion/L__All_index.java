@@ -1,23 +1,31 @@
 package M__Recursion;
 
 public class L__All_index {
-    public static void allIndexes(int[] a, int startIndex, int x){
-        if (startIndex > a.length-1){
-            return;
+    public static int[] helper(int input[], int x, int startIndex, int foundSoFar){
+        if (startIndex == input.length){
+            int newArray[] = new int[foundSoFar];
+            return newArray;
         }
-
-        if (a[startIndex] == x){
-            System.out.println(startIndex);
+        if (input[startIndex] == x){
+            foundSoFar++;
         }
+        int smallAns[] = helper(input, x, startIndex+1, foundSoFar);
+        if (input[startIndex] == x){
+            smallAns[foundSoFar-1] = startIndex;
+        }
+        return smallAns;
+    }
+    public static int[] allIndexes(int input[], int x) {
+        return helper(input,x,0,0);
 
-        allIndexes(a, startIndex+1, 2);
     }
 
-    public static void giveans(int[] a){
-        allIndexes(a, 0, 2);
-    }
     public static void main(String[] args) {
-        int[] arr = {2,3,2,3,1,2};
-        giveans(arr);
+        int[] input = {1,0,3,4,5,3,2,3};
+        int x = 3;
+        int[] out = allIndexes(input, x);
+        for (int val : out){
+            System.out.print(val + " ");
+        }
     }
 }
