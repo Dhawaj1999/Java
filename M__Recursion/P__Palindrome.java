@@ -2,7 +2,7 @@ package M__Recursion;
 
 public class P__Palindrome {
     public static boolean palindrome(String s, int i, int j){
-        if (i == j){
+        if (i >= j){
             return true;
         }
 
