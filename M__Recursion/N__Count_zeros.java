@@ -1,19 +1,25 @@
 package M__Recursion;
 
 public class N__Count_zeros {
-    public static int countZeros(int n) {
+    public static int countZerosRec(int input, int n){
         if (n == 0){
+            return 1;
+        }
+        // Write your code here
+        if (input == 0){
             return 0;
         }
-        int temp = countZeros(n/10);
-        if (n%10==0){
-            return temp+1;
+        int smallAns = countZerosRec(input/10, n);
+        if (input%10==0){
+            return smallAns+1;
         }
-        return temp;
+        return smallAns;
     }
 
+
     public static void main(String[] args) {
-        int n = countZeros(1020300);
-        System.out.println(n);
+        int input = 0;
+        int n = input;
+        System.out.println(countZerosRec(input, n));
     }
 }
