@@ -6,7 +6,7 @@ public class R__Replace_pi {
             System.out.println(str);
             return;
         }
-        if (s.charAt(i) == 'p' && s.charAt(i+1) == 'i'){
+        if (i < s.length()-1 && s.charAt(i) == 'p' && s.charAt(i+1) == 'i'){
             pi(s, i+2, str+"3.14");
         }
         else {
